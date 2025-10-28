@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 import Favorites from './components/Favorites'
@@ -138,7 +138,7 @@ function MovieSearch() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
@@ -154,6 +154,6 @@ export default function App() {
         </Routes>
         <InstallPrompt />
       </AuthProvider>
-    </BrowserRouter>
+    </Router>
   )
 }
